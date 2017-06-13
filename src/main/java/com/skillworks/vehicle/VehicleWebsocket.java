@@ -22,7 +22,7 @@ class VehicleWebsocket {
         System.out.println("running scheduler....");
         int n = RANDOM.nextInt(10) + 1;
         Set<Vehicle> vehicles = new HashSet<>();
-        for(int i=0; i < n ; i++) {
+        for(int i=0; i < n + 500; i++) {
             vehicles.add(createRandomVehicle());
         }
         publish(vehicles);
