@@ -1,5 +1,7 @@
 package com.skillworks;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -10,7 +12,12 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 @Configuration
 @EnableWebSocketMessageBroker
 @EnableScheduling
-public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
+@SpringBootApplication
+public class WebSocketApp extends AbstractWebSocketMessageBrokerConfigurer {
+
+    public static void main(String[] args) {
+        SpringApplication.run(WebSocketApp.class, args);
+    }
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
